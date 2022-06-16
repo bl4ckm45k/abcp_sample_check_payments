@@ -10,6 +10,7 @@ class DbConfig:
     port: str
     password: str
     user: str
+    database: str
 
 
 @dataclass
@@ -51,7 +52,7 @@ def load_config(path: str = None):
         ),
         db=DbConfig(
             host=env.str('DB_HOST'), port=env.str('DB_PORT'),
-            user=env.str('DB_USER'), password=env.str('DB_PASS')
+            user=env.str('DB_USER'), password=env.str('DB_PASS'), database=env.str('DB_NAME')
         ),
         abcp=Abcp(
             host=env.str('ABCP_HOST'),

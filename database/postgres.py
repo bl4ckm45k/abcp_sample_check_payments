@@ -15,7 +15,9 @@ class Database:
         self._db_user = config.user
         self._db_password = config.password
         self._db_host = config.host
+        self._db_database = config.database
         self._db_port = config.port
+
 
     async def execute(self, command, *args, fetch: bool = False, fetchval: bool = False, fetchrow: bool = False,
                       execute: bool = False):
@@ -23,6 +25,7 @@ class Database:
             self.pool = await asyncpg.create_pool(user=self._db_user,
                                                   password=self._db_password,
                                                   host=self._db_host,
+                                                  database=self._db_database,
                                                   port=self._db_port
                                                   )
             logger.info(f'Создано подключение к БД')
