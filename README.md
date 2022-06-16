@@ -123,7 +123,8 @@ pip install -r /home/sample/requirements.txt
 nano /etc/systemd/system/abcp.service
 ```
 
-В настройках User и Group не рекомендуется использовать пользователя root
+В настройках User и Group не рекомендуется использовать пользователя root.     
+На случай если пропустили создание пользователя при начальной настроке сервера
 
 ```
 [Unit]
