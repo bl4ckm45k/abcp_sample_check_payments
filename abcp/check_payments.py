@@ -1,5 +1,3 @@
-import asyncio
-import datetime
 import logging
 
 from loader import api, dp, config, db
@@ -35,10 +33,3 @@ async def check_online_payments(date_start, date_end):
                                          x['paymentMethodId'], x['paymentMethodName'], x['amount'])
         except ValueError:
             pass
-    await api.close()
-
-
-if __name__ == '__main__':
-    update_start = (datetime.datetime.now() - datetime.timedelta(days=14)).strftime("%Y-%m-%d")
-    update_end = datetime.datetime.now().strftime("%Y-%m-%d")
-    asyncio.run(check_online_payments(update_start, update_end))
