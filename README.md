@@ -24,7 +24,8 @@ ALTER USER postgres with password 'ВАШ_ПАРОЛЬ';
 Посмотрите кодировку шаблона базы данных (Потребуется пароль):
 
 ```
-sudo -u postgres psql template1 -c 'SHOW SERVER_ENCODING'
+sudo -u postgres psql
+\l
 ```
 
 Если кодировка отличается от "en_US.utf8" выполните команды
